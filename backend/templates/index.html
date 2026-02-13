@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Post-Mortem | Understand Why You Here Rejected</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1e293b;
+            --bg-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        footer {
+            margin-top: 4rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Didn’t get selected? <br><span style="color: var(--primary-color);">Understand why.</span></h1>
+        <p>
+            Get structured insights on your interview performance. Analyze your resume match and communication patterns
+            to improve for next time.
+        </p>
+        <!-- For MVP, we link to the frontend dev server or build output. 
+             Since the user asked for a simple HTML landing page served by FastAPI, 
+             we might link to the react app URL if they are running separately, 
+             OR if we were serving the React app build from FastAPI, we'd link there.
+             
+             However, the user wants "A button that links to the analysis page". 
+             If the "analysis page" is the React app, we should link to that URL.
+             If they want a simple HTML form served by FastAPI (server-side rendered), 
+             we would create another template.
+             
+             Given the previous steps built a React frontend, I'll assume they want to link to the React App URL.
+             Let's assume the React app runs on port 5173 for dev, or 
+             maybe the user intends to replace the React app with this simple page?
+             
+             Re-reading: "The backend is running successfully... add a root route... serve a simple HTML landing page"
+             "Add a button that links to the analysis page"
+             
+             I will make the button link to http://localhost:5173 for now, 
+             or I can add a simple JS redirect script if they want it served from the same origin eventually.
+             Let's just use a relative link `/analysis` if we are serving the react app from here, 
+             but we are NOT serving the react app from FastAPI yet (Create React App/Vite is separate).
+             
+             To be safe and helpful, I will link to the React App's URL (http://localhost:5173) 
+             since that's where the "Analysis Page" (the React component) lives right now.
+        -->
+        <a href="http://localhost:5173" class="btn">Analyze My Interview</a>
+
+        <footer>
+            <p>This tool provides guidance based on common hiring patterns.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
